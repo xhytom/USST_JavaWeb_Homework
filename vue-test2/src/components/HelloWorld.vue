@@ -1,44 +1,36 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-})
-</script>
-
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
-  </div>
+  <div :id = "msg_id">{{ msg }}</div>
+  <button :disabled = "isButtonDisabled"> button</button>
+  <div v-bind="obj_1">123</div>
 </template>
 
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
+<script>
 
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+export default {
+  data() {
+    return {
+      msg: "Hello, world!",
+      msg_id: "msg001",
+      isButtonDisabled:false,
+      obj_1: {
+        id: "msg001"
+      }
+    }
   }
 }
+
+</script>
+
+<style>
+
+#msg001 {
+  color: red;
+  font-size: 30px;
+}
+
+#msg002 {
+  color: red;
+  font-size: 30px;
+}
+
 </style>
