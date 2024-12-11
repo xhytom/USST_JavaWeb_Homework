@@ -11,4 +11,12 @@ public class StudentService {
         ArrayList<StudentEntity> studentEntities = studentDao.allStudent();
         return studentEntities;
     }
+    public StudentEntity queryStudentById(Long stuId) throws SQLException, ClassNotFoundException {
+        StudentEntity studentEntity = studentDao.queryStudentById(stuId);
+        return studentEntity;
+    }
+    public int addNewStudent(StudentEntity stu) throws SQLException, ClassNotFoundException {
+        int ret = studentDao.addNewStudent(stu);
+        return ret;
+    }
 }

@@ -9,6 +9,13 @@ public class StudentEntity {
         this.age = age;
     }
 
+    public StudentEntity() {
+        this.id = null;
+        this.name = null;
+        this.address = null;
+        this.age = null;
+    }
+
     public Long getId() {
         return id;
     }
