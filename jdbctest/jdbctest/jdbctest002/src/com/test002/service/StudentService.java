@@ -19,4 +19,9 @@ public class StudentService {
         int ret = studentDao.addNewStudent(stu);
         return ret;
     }
+
+    public int updateStudentById(StudentEntity stu) throws SQLException, ClassNotFoundException {
+        int ret = studentDao.updateStudentById(stu);
+        return ret;
+    }
 }

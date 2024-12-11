@@ -1,5 +1,6 @@
 import com.mysql.jdbc.Driver;
 
+import java.lang.management.ManagementFactory;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -132,6 +133,40 @@ public class StudentDao {
                 e.printStackTrace();
                 return 0;
             }
+            return ret;
+        }
+    }
+
+    public int updateStudentById(StudentEntity stu) throws ClassNotFoundException, SQLException {
+        Connection connection = null;
+        Statement statement = null;
+        StudentEntity studentEntity = null;
+        int ret = 0;
+        try {
+            Class.forName(DRIVER);
+            connection = DriverManager.getConnection(SQLURL, SQLUSERNAME, SQLPASSWORD);
+            statement = connection.createStatement();
+
+            String sql = "update student " +
+                    "set name = '" + stu.getName() + "', address = '" + stu.getAddress() + "', age = " + stu.getAge().toString() + " " +
+                    "where id = " + stu.getId().toString();
+            System.out.println(sql);
+            ret = statement.executeUpdate(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             return ret;
         }
     }
