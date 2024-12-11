@@ -1,21 +1,53 @@
 <template>
-  <div>
-    <Header />
-    <Main />
-    <Aside />
-  </div>
+
+  <!-- <SlotsTwo>
+    <template v-slot:slot1>
+      <p>"A"</p>
+    </template>
+    <template v-slot:slot2>
+      <p>"B"</p>
+    </template>
+  
+  </SlotsTwo> -->
+
+  <SlotsThree>
+    <template #slot1="slotProps">
+      <p>{{ slotProps.msg }}</p>
+    </template>
+
+    <template #slot2="slotProps">
+      <p>{{ slotProps.demo }}</p>
+    </template>
+  </SlotsThree>
+
 </template>
 
+
 <script>
-import Header from './pages/Header.vue';
-import Main from './pages/Main.vue';
-import Aside from './pages/Aside.vue';
+// import Parent from './components/myComponents/Parent.vue';
+// import ComponentA from './components/myComponents/ComponentA.vue';
+// import ComponentEvent from './components/ComponentEvent.vue';
+// import Main from './components/Main.vue';
+// import ComponentA from './components/ComponentA.vue';
+// import SlotsBase from './components/SlotsBase.vue';
+// import SlotsTwo from './components/SlotsTwo.vue';
+import SlotsThree from './components/SlotsThree.vue';
 
 export default {
+  data() {
+    return {
+      message: "msg",
+      currentTest:"测试内容",
+    }
+  },
   components: {
-    Header:Header,
-    Main:Main,
-    Aside:Aside
+    // Parent,
+    // ComponentA,
+    // ComponentEvent,
+    // Main,
+    // SlotsBase,
+    // SlotsTwo,
+    SlotsThree,
   }
 }
 
@@ -24,6 +56,37 @@ export default {
 <style>
 
 </style>
+
+
+
+
+
+<!-- <template>
+  <div>
+    <Header />
+    <Main />
+    <Aside />
+  </div>
+</template> -->
+
+<!-- <script> -->
+<!-- // import Header from './pages/Header.vue';
+import Main from './pages/Main.vue';
+import Aside from './pages/Aside.vue';
+
+export default {
+  components: {
+    // Header:Header,
+    Main:Main,
+    Aside:Aside
+  }
+} -->
+
+<!-- </script> -->
+
+<!-- <style> -->
+
+<!-- </style> -->
 
 
 <!-- <template> -->
