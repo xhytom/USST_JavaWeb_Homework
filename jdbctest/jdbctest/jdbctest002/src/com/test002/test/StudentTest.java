@@ -12,12 +12,21 @@ public class StudentTest {
         StudentEntity studentEntity1 = studentService.queryStudentById(1l);
         System.out.println(studentEntity1);
 
+//        StudentEntity newStudentEntity = new StudentEntity();
+//        newStudentEntity.setId(10l);
+//        newStudentEntity.setName("zsc");
+//        newStudentEntity.setAge(20);
+//        newStudentEntity.setAddress("501");
+//        int ret = studentService.addNewStudent(newStudentEntity);
+//
+//        System.out.println(ret);
+
         StudentEntity newStudentEntity = new StudentEntity();
-        newStudentEntity.setId(10l);
+        newStudentEntity.setId(6l);
         newStudentEntity.setName("zsc");
         newStudentEntity.setAge(20);
         newStudentEntity.setAddress("501");
-        int ret = studentService.addNewStudent(newStudentEntity);
+        int ret = studentService.updateStudentById(newStudentEntity);
 
         System.out.println(ret);
     }
