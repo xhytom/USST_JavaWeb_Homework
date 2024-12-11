@@ -1,21 +1,18 @@
 <template>
-  <div>
-    <Header />
-    <Main />
-    <Aside />
-  </div>
+
+  <ComponentA />
+
 </template>
 
+
 <script>
-import Header from './pages/Header.vue';
-import Main from './pages/Main.vue';
-import Aside from './pages/Aside.vue';
+// import Parent from './components/myComponents/Parent.vue';
+import ComponentA from './components/myComponents/ComponentA.vue';
 
 export default {
   components: {
-    Header:Header,
-    Main:Main,
-    Aside:Aside
+    // Parent,
+    ComponentA,
   }
 }
 
@@ -24,6 +21,37 @@ export default {
 <style>
 
 </style>
+
+
+
+
+
+<!-- <template>
+  <div>
+    <Header />
+    <Main />
+    <Aside />
+  </div>
+</template> -->
+
+<!-- <script> -->
+<!-- // import Header from './pages/Header.vue';
+import Main from './pages/Main.vue';
+import Aside from './pages/Aside.vue';
+
+export default {
+  components: {
+    // Header:Header,
+    Main:Main,
+    Aside:Aside
+  }
+} -->
+
+<!-- </script> -->
+
+<!-- <style> -->
+
+<!-- </style> -->
 
 
 <!-- <template> -->
