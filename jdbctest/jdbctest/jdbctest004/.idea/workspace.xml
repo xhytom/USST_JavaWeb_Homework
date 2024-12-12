@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4db8cc88-92b0-4bb5-acc9-7d3e253e7ced" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/../jdbctest003/sql/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/sql/Query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbctest003/src/com/test003/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/src/com/test003/dao/StudentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbctest003/src/com/test003/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/src/com/test003/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbctest003/src/com/test003/test/StudentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/src/com/test003/test/StudentTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2q7ciU93yRC82lzV2QKO7FAkEsX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/10042/Desktop/2024-2025上学期/JavaWeb/USST_JavaWeb_Homework/jdbctest/jdbctest/jdbctest004",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/10042/Desktop/2024-2025上学期/JavaWeb/USST_JavaWeb_Homework/jdbctest/jdbctest/jdbctest004/src/Main.java",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\10042\Desktop\2024-2025上学期\JavaWeb\USST_JavaWeb_Homework\jdbctest\jdbctest\jdbctest004" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\10042\Desktop\2024-2025上学期\JavaWeb\USST_JavaWeb_Homework\jdbctest\jdbctest\jdbctest004\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.UserTest">
+    <configuration name="JdbcUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JdbcUtils" />
+      <module name="jdbctest004" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UserTest" />
+      <module name="jdbctest004" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.UserTest" />
+        <item itemvalue="应用程序.JdbcUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="4db8cc88-92b0-4bb5-acc9-7d3e253e7ced" name="更改" comment="" />
+      <created>1734017182716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734017182716</updated>
+      <workItem from="1734017183846" duration="4643000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

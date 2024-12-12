@@ -26,3 +26,6 @@ values
 update student
 set name = 'Elegance'
 where id = 10 or age = 20;
+
+delete from student
+where id = 6;

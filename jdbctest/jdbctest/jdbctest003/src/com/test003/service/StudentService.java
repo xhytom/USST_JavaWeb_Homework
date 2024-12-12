@@ -5,23 +5,26 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class StudentService {
-
-    private StudentDao studentDao = new StudentDao();
-    public ArrayList<StudentEntity> allStudent() throws SQLException, ClassNotFoundException {
-        ArrayList<StudentEntity> studentEntities = studentDao.allStudent();
+    public static ArrayList<StudentEntity> allStudent() throws SQLException, ClassNotFoundException {
+        ArrayList<StudentEntity> studentEntities = StudentDao.allStudent();
         return studentEntities;
     }
     public StudentEntity queryStudentById(Long stuId) throws SQLException, ClassNotFoundException {
-        StudentEntity studentEntity = studentDao.queryStudentById(stuId);
+        StudentEntity studentEntity = StudentDao.queryStudentById(stuId);
         return studentEntity;
     }
     public int addNewStudent(StudentEntity stu) throws SQLException, ClassNotFoundException {
-        int ret = studentDao.addNewStudent(stu);
+        int ret = StudentDao.addNewStudent(stu);
         return ret;
     }
 
     public int updateStudentById(StudentEntity stu) throws SQLException, ClassNotFoundException {
-        int ret = studentDao.updateStudentById(stu);
+        int ret = StudentDao.updateStudentById(stu);
+        return ret;
+    }
+
+    public static int deleteStudentById(Long id) throws SQLException, ClassNotFoundException {
+        int ret = StudentDao.deleteStudentById(id);
         return ret;
     }
 }

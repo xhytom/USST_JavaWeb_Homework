@@ -13,7 +13,7 @@ public class StudentDao {
     final String SQLURL = "jdbc:mysql://127.0.0.1:3306/test";
     final String SQLUSERNAME = "root";
     final String SQLPASSWORD = "123456";
-    public ArrayList<StudentEntity> allStudent() throws ClassNotFoundException, SQLException {
+    public static ArrayList<StudentEntity> allStudent() throws ClassNotFoundException, SQLException {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -48,7 +48,7 @@ public class StudentDao {
         }
     }
 
-    public StudentEntity queryStudentById(Long stuId) throws ClassNotFoundException, SQLException {
+    public static StudentEntity queryStudentById(Long stuId) throws ClassNotFoundException, SQLException {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -80,7 +80,7 @@ public class StudentDao {
             return studentEntity;
         }
     }
-    public int addNewStudent(StudentEntity stu) throws ClassNotFoundException, SQLException {
+    public static int addNewStudent(StudentEntity stu) throws ClassNotFoundException, SQLException {
         Connection connection = null;
         Statement statement = null;
         int ret = 0;
@@ -100,7 +100,7 @@ public class StudentDao {
         }
     }
 
-    public int updateStudentById(StudentEntity stu) throws ClassNotFoundException, SQLException {
+    public static int updateStudentById(StudentEntity stu) throws ClassNotFoundException, SQLException {
         Connection connection = null;
         Statement statement = null;
         StudentEntity studentEntity = null;
@@ -117,6 +117,23 @@ public class StudentDao {
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
+        } finally {
+            JdbcUtils.closeConnection(statement, connection);
+            return ret;
+        }
+    }
+
+    public static int deleteStudentById(Long id) throws SQLException {
+        Connection connection = null;
+        Statement statement = null;
+        int ret = 0;
+        try {
+            connection = JdbcUtils.getConnection();
+            statement = connection.createStatement();
+            String sql = "delete from student where id = " + id.toString();
+            ret = statement.executeUpdate(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             JdbcUtils.closeConnection(statement, connection);
             return ret;
