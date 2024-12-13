@@ -1,3 +1,5 @@
+package com.test;
+
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import java.beans.PropertyVetoException;
@@ -9,10 +11,6 @@ import java.sql.SQLException;
 public class Test {
     public static void main(String[] args) throws PropertyVetoException, SQLException {
         ComboPooledDataSource pool = new ComboPooledDataSource();
-        pool.setUser("root");
-        pool.setPassword("123456");
-        pool.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC");
-        pool.setDriverClass("com.mysql.jdbc.Driver");
         pool.setMaxPoolSize(30);
         pool.setAcquireRetryAttempts(3);
         pool.setAcquireRetryDelay(1000);

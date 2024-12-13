@@ -1,0 +1,17 @@
+<c3p0-config>
+    <!-- 使用默认的配置读取连接池对象 -->
+    <default-config>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+    </default-config>
+    <!-- 有参构造方法 -->
+    <name-config name = "abc">
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+    </name-config>
+
+</c3p0-config>
