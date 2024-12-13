@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import NewsList from '@/views/NewsList.vue';
+import NewsDetail from'@/views/NewsDetail.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: NewsList,
+  },
+  {
+    path: '/news/:id',
+    name: 'NewsDetail',
+    component: NewsDetail, // 新闻详情
+    props: true, // 传递路由参数
   },
 ];
 

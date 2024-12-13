@@ -1,4 +1,6 @@
-drop table User;
+use test;
+
+drop table if exists User;
 
 create table User (
   id bigint auto_increment,

@@ -10,7 +10,7 @@
   
   </SlotsTwo> -->
 
-  <SlotsThree>
+  <!-- <SlotsThree>
     <template #slot1="slotProps">
       <p>{{ slotProps.msg }}</p>
     </template>
@@ -18,7 +18,9 @@
     <template #slot2="slotProps">
       <p>{{ slotProps.demo }}</p>
     </template>
-  </SlotsThree>
+  </SlotsThree> -->
+
+  <ComponentC />
 
 </template>
 
@@ -31,13 +33,14 @@
 // import ComponentA from './components/ComponentA.vue';
 // import SlotsBase from './components/SlotsBase.vue';
 // import SlotsTwo from './components/SlotsTwo.vue';
-import SlotsThree from './components/SlotsThree.vue';
+// import SlotsThree from './components/SlotsThree.vue';
+import ComponentC from './components/ComponentC.vue';
 
 export default {
   data() {
     return {
-      message: "msg",
-      currentTest:"测试内容",
+      // message: "msg",
+      // currentTest:"测试内容",
     }
   },
   components: {
@@ -47,7 +50,8 @@ export default {
     // Main,
     // SlotsBase,
     // SlotsTwo,
-    SlotsThree,
+    // SlotsThree,
+    ComponentC,
   }
 }
 
