@@ -1,22 +1,29 @@
 <template>
-    <div>
-      <h1>新闻列表</h1>
-      <NewsSearch @search="handleSearch" />
-      <div v-if="news.length">
-        <ul>
-          <li v-for="article in news" :key="article.id">
-            <h2>{{ article.title }}</h2>
+  <div>
+    <h1>新闻列表</h1>
+    <NewsSearch @search="handleSearch" />
+    <div v-if="news.length">
+      <ul>
+        <li v-for="article in news" :key="article.id">
+          <div>
+            <h2 style="display: flex;">
+              <!-- 使用 router-link 进行跳转 -->
+              <router-link :to="'/news/' + article.id">{{ article.title }}</router-link>
+              <p class="articleCategory">{{ article.category }}</p>
+            </h2>
             <p>{{ article.description }}</p>
-          </li>
-        </ul>
-      </div>
-      <div v-else>
-        <p>暂无新闻</p>
-      </div>
+          </div>
+          <hr>
+        </li>
+      </ul>
     </div>
-  </template>
+    <div v-else>
+      <p>暂无新闻</p>
+    </div>
+  </div>
+</template>
   
-  <script>
+<script>
   import NewsSearch from '@/components/NewsSearch.vue';
   import axios from 'axios';
   
@@ -46,9 +53,9 @@
       this.handleSearch('');
     },
   };
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   ul {
     list-style-type: none;
   }
@@ -65,5 +72,11 @@
   p {
     color: #666;
   }
-  </style>
+
+.articleCategory {
+  font-size: 16px;
+  text-align: right;
+}
+
+</style>
   

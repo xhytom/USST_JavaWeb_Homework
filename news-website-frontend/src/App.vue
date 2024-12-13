@@ -6,8 +6,8 @@
         <div class="logo">在线新闻网站</div>
         <ul class="nav-links">
           <li><router-link to="/">首页</router-link></li>
-          <li><router-link to="/category">分类浏览</router-link></li>
-          <li><router-link to="/search">搜索新闻</router-link></li>
+          <!-- <li><router-link to="/category">分类浏览</router-link></li>
+          <li><router-link to="/search">搜索新闻</router-link></li> -->
         </ul>
       </nav>
     </header>
