@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4db8cc88-92b0-4bb5-acc9-7d3e253e7ced" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../jdbctest003/sql/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/sql/Query.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jdbctest003/src/com/test003/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/src/com/test003/dao/StudentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jdbctest003/src/com/test003/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/src/com/test003/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jdbctest003/src/com/test003/test/StudentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jdbctest003/src/com/test003/test/StudentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/libs/mysql-connector-java-8.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/src/com/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test005/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2q7ciU93yRC82lzV2QKO7FAkEsX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -95,7 +100,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734017182716</updated>
-      <workItem from="1734017183846" duration="4643000" />
+      <workItem from="1734017183846" duration="5255000" />
+      <workItem from="1734064186828" duration="327000" />
+      <workItem from="1734064637244" duration="86000" />
+      <workItem from="1734065790931" duration="1675000" />
     </task>
     <servers />
   </component>
