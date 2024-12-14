@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c499920b-8972-420c-83dc-e43a20830669" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/storeapp/store/templates/store/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storeapp/store/templates/store/addGoods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/onlinestore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/onlinestore.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storeapp/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storeapp/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storeapp/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,15 +36,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/school/web/USST_JavaWeb_Homework/onlinestore"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/school/web/USST_JavaWeb_Homework/onlinestore&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="onlinestore" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11 (base)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/storeapp" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/storeapp/" />
+      <option name="PARAMETERS" value="python3 E:\school\web\USST_JavaWeb_Homework\onlinestore\storeapp\manage.py runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
