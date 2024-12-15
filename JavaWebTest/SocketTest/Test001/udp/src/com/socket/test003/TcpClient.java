@@ -3,33 +3,34 @@ package com.socket.test003;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class TcpClient {
     public static void main(String[] args) throws IOException {
-
+        int port = 8080;
+//        InetAddress inetAddress = InetAddress.getByName("192.168.3.114");
+        InetAddress inetAddress = InetAddress.getByName("localhost");
         while (true) {
-            // 创建socket对象
-            Socket socket = new Socket("127.0.0.1", 8080);
-            System.out.println("客户端：请输入发送数据的内容");
-            Scanner sc = new Scanner(System.in);
-            String context = sc.nextLine();
-            if (context.equals("666")) {
-                break;// 退出循环
-            }
-            // 获取getOutputStream
+            Socket socket = new Socket(inetAddress, port);
+            System.out.println("Client: Please input message");
+            Scanner scanner = new Scanner(System.in);
+            String context = scanner.next();
             OutputStream outputStream = socket.getOutputStream();
-            // 写入数据给服务器端
             outputStream.write(context.getBytes());
-            // 接受服务器端响应的内容
-            InputStream inputStream = socket.getInputStream();
+
             byte[] msg = new byte[1024];
+            InputStream inputStream = socket.getInputStream();
             int len = inputStream.read(msg);
-            System.out.println("服务端响应数据给客户端：" + new String(msg, 0, len));
+            String msg_string = new String(msg, 0, len);
+            System.out.println("Received message: " + msg_string);
             outputStream.close();
             socket.close();
+            if (msg_string.equals("byebye")) {
+                break;
+            }
         }
-
     }
 }

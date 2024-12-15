@@ -5,28 +5,46 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.UUID;
+import java.util.Scanner;
 
 public class TcpServer {
     public static void main(String[] args) throws IOException {
-        // 创建serversocket对象
-        ServerSocket serverSocket = new ServerSocket(8080);
-        System.out.println("服务器端启动成功....");
+        int port = 8080;
+        ServerSocket serverSocket = new ServerSocket(port);
+
+        System.out.println("Server OK!");
         while (true) {
-            // 接受客户端数据
             Socket socket = serverSocket.accept();
-            //inputStream
-            InputStream inputStream = socket.getInputStream();
-            byte[] bytes = new byte[1024];
-            int len = inputStream.read(bytes);
-            System.out.println("服务器端接受客户端：" + new String(bytes, 0, len));
-            // 服务端响应数据给客户端
-            OutputStream outputStream = socket.getOutputStream();
-            String resp = "我收到啦" + UUID.randomUUID().toString();
-            outputStream.write(resp.getBytes());
-            inputStream.close();
-            outputStream.close();
-            socket.close();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        InputStream inputStream = socket.getInputStream();
+                        byte[] msg = new byte[1024];
+
+                        int len = inputStream.read(msg);
+
+                        String msg_string = new String(msg, 0, len);
+
+                        System.out.println("Received " + msg_string);
+                        OutputStream outputStream = socket.getOutputStream();
+                        if (msg_string.equals("byebye")) {
+                            outputStream.write("byebye".getBytes());
+                        }
+
+                        System.out.println("Please reply a message \"" + msg_string + "\" :");
+                        Scanner scanner = new Scanner(System.in);
+                        String resp = scanner.next();
+                        outputStream.write(resp.getBytes());
+                        inputStream.close();
+                        outputStream.close();
+                        socket.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }).start();
         }
     }
 }

@@ -1,7 +1,6 @@
 package com.socket.test001;
 
 import java.net.InetAddress;
-import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 
 public class Test001 {
