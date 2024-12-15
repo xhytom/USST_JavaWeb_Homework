@@ -9,3 +9,9 @@ class Goods(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class UserInfo(models.Model):
+    username = models.CharField(max_length=32)
+    password = models.CharField(max_length=32)
+    is_operator = models.IntegerField(default=0)

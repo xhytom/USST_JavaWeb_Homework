@@ -6,7 +6,7 @@
     <title>商品列表</title>
     <style>
         table {
-            width: 80%;
+            width: 65%;
             margin: 20px auto;
             border-collapse: collapse;
         }
@@ -36,16 +36,33 @@
             background-color: #45a049;
         }
         .delete-button {
-            padding: 5px 10px;
+            padding: 8px 16px;
             background-color: #f44336;
             color: white;
             border: none;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
         }
         .delete-button:hover {
             background-color: #d32f2f;
         }
+        .modify-button {
+            padding: 8px 16px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .modify-button:hover {
+            background-color: #4682B4;
+        }
+
     </style>
 </head>
 <body>
@@ -71,6 +88,10 @@
                     <form method="post" action="/store/goods/del/{{ item.id }}/" style="display:inline;">
                         {% csrf_token %}
                         <button type="submit" class="delete-button">删除</button>
+                    </form>
+                    <form method="get" action="/store/goods/modify/{{ item.id }}/" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="modify-button">编辑</button>
                     </form>
                 </td>
             </tr>

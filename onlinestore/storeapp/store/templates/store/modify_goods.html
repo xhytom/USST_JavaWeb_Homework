@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑商品</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>编辑商品</h1>
+        {% if goods %}
+            <form method="post" action="{% url 'modify_goods' goods.id %}">
+                {% csrf_token %}
+                <label for="name">商品名称:</label>
+                <input type="text" id="name" name="name" value="{{ goods.name }}" required>
+
+                <label for="price">价格:</label>
+                <input type="number" id="price" name="price" step="0.01" value="{{ goods.price }}" required>
+
+                <label for="stock">库存:</label>
+                <input type="number" id="stock" name="stock" value="{{ goods.stock }}" required>
+
+                <label for="sales">销量:</label>
+                <input type="number" id="sales" name="sales" value="{{ goods.sales }}">
+
+                <button type="submit">保存修改</button>
+            </form>
+        {% else %}
+            <p>商品信息未找到！</p>
+        {% endif %}
+    </div>
+</body>
+</html>
