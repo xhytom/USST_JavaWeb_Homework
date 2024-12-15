@@ -35,7 +35,6 @@ public class TcpServer {
             outputStream.write(resp.getBytes());
             inputStream.close();
             outputStream.close();
-            scanner.close();
             socket.close();
         }
         serverSocket.close();

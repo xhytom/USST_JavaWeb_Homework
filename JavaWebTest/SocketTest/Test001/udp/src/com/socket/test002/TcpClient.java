@@ -13,8 +13,8 @@ public class TcpClient {
         int port = 8080;
 //        InetAddress inetAddress = InetAddress.getByName("192.168.3.114");
         InetAddress inetAddress = InetAddress.getByName("localhost");
-        Socket socket = new Socket(inetAddress, port);
         while (true) {
+            Socket socket = new Socket(inetAddress, port);
             System.out.println("Client: Please input message");
             Scanner scanner = new Scanner(System.in);
             String context = scanner.next();
@@ -26,10 +26,11 @@ public class TcpClient {
             int len = inputStream.read(msg);
             String msg_string = new String(msg, 0, len);
             System.out.println("Received message: " + msg_string);
+            outputStream.close();
+            socket.close();
             if (msg_string.equals("byebye")) {
                 break;
             }
         }
-        socket.close();
     }
 }
