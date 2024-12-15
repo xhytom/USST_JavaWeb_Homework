@@ -20,6 +20,32 @@
         th {
             background-color: #f4f4f4;
         }
+        .add-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .add-button:hover {
+            background-color: #45a049;
+        }
+        .delete-button {
+            padding: 5px 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .delete-button:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +57,7 @@
                 <th>价格</th>
                 <th>库存</th>
                 <th>销量</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -40,13 +67,21 @@
                 <td>{{ item.price }}</td>
                 <td>{{ item.stock }}</td>
                 <td>{{ item.sales }}</td>
+                <td>
+                    <form method="post" action="/store/goods/del/{{ item.id }}/" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-button">删除</button>
+                    </form>
+                </td>
             </tr>
             {% empty %}
             <tr>
-                <td colspan="4">没有商品信息。</td>
+                <td colspan="5">没有商品信息。</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+
+    <a href="/store/goods/add/" class="add-button">新增商品</a>
 </body>
 </html>

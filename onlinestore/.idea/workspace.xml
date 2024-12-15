@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c499920b-8972-420c-83dc-e43a20830669" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/storeapp/store/templates/store/addGoods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/onlinestore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/onlinestore.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storeapp/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storeapp/store/templates/store/addGoods.html" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/templates/store/add_goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storeapp/store/templates/store/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/templates/store/list_goods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storeapp/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storeapp/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/views.py" afterDir="false" />
     </list>
