@@ -6,7 +6,7 @@ import java.net.DatagramSocket;
 
 public class UdpServer {
     public static void main(String[] args) throws IOException {
-        DatagramSocket datagramSocket = new DatagramSocket(8080);
+        DatagramSocket datagramSocket = new DatagramSocket(5000);
         byte[] msg = new byte[1024];
 
         DatagramPacket datagramPacket = new DatagramPacket(msg, msg.length);
@@ -14,7 +14,7 @@ public class UdpServer {
         datagramSocket.receive(datagramPacket);
         System.out.println("Recieved...");
 
-        String msg_string = new String(datagramPacket.getData());
+        String msg_string = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
 
         System.out.println("message is " + msg_string);
 
