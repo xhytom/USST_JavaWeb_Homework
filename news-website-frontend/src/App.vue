@@ -19,6 +19,20 @@
     </main>
 
     <!-- 底部信息 -->
+    <template>
+      <div>
+        <a-pagination show-quick-jumper v-model:current="current1" :total="500" @change="onChange" />
+        <br />
+        <a-pagination
+          show-quick-jumper
+          v-model:current="current2"
+          :total="500"
+          disabled
+          show-less-items
+          @change="onChange"
+        />
+      </div>
+    </template>
     <footer>
       <p>&copy; 2024 在线新闻网站 | 技术支持: Vue 3 + Axios</p>
     </footer>
@@ -29,6 +43,8 @@
 export default {
   name: "App",
 };
+
+
 </script>
 
 <style scoped>
