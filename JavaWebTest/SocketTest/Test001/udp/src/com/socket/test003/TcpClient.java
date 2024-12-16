@@ -12,7 +12,8 @@ public class TcpClient {
     public static void main(String[] args) throws IOException {
         int port = 8080;
 //        InetAddress inetAddress = InetAddress.getByName("192.168.3.114");
-        InetAddress inetAddress = InetAddress.getByName("localhost");
+//        InetAddress inetAddress = InetAddress.getByName("localhost");
+        InetAddress inetAddress = InetAddress.getByName("150.158.79.12");
         while (true) {
             Socket socket = new Socket(inetAddress, port);
             System.out.println("Client: Please input message");
