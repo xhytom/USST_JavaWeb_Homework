@@ -5,7 +5,9 @@
         <div v-if="ad">
             <h2 class="adTitle">{{ ad.title }}</h2>
             <!-- 显示广告图片 -->
-            <img id="pic" :src="ad.imageUrl" alt="广告图片" />
+            <a :href="ad.url" target="_blank">
+              <img :src="ad.imageUrl" alt="广告图片" />
+            </a>
             <p class="adDesc">{{ ad.description }}</p>
         </div>
         <div v-else>
@@ -63,6 +65,6 @@ export default {
 .adDesc {
     text-align: center;
     color: blue;
-    font-size:30px;
+    font-size:16px;
 }
 </style>
