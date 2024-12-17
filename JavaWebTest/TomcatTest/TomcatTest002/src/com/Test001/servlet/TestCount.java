@@ -1,4 +1,4 @@
-package com.Test.servlet;
+package com.Test001.servlet;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
