@@ -1,4 +1,4 @@
-CREATE DATABASE usst_ads;  -- 创建广告数据库
+-- CREATE DATABASE usst_ads;  -- 创建广告数据库
 
 USE usst_ads;  -- 选择刚创建的数据库
 
