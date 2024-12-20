@@ -2,17 +2,23 @@ package org.example.backend.service;
 
 import org.example.backend.entity.User;
 
-import java.util.List;
-
 /**
- * UserService接口，定义了用户相关的业务逻辑
+ * 用户服务接口，定义用户注册、登录等操作
  */
 public interface UserService {
-    List<User> listUsers();  // 获取所有用户
 
-    void saveUser(User user);  // 保存用户
+    /**
+     * 用户注册
+     * @param user 用户对象
+     * @return 注册是否成功
+     */
+    boolean register(User user);
 
-    void deleteUser(Long id);  // 删除用户
-
-    User getUserByUsername(String username);  // 根据用户名获取用户信息
+    /**
+     * 用户登录
+     * @param username 用户名
+     * @param password 密码
+     * @return 返回JWT Token，如果登录失败返回null
+     */
+    String login(String username, String password);
 }

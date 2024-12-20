@@ -2,59 +2,38 @@ package org.example.backend.controller;
 
 import org.example.backend.entity.User;
 import org.example.backend.service.UserService;
+import org.example.backend.utils.JWTUtil;
+import org.example.backend.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.servlet.http.HttpServletResponse;
 
 /**
- * UserController控制器类，处理用户相关的HTTP请求
+ * 用户控制器，处理用户注册、登录等请求
  */
 @RestController
-@RequestMapping("/api/users")  // 定义请求路径为/api/users
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    /**
-     * 获取所有用户
-     * @return 用户列表
-     */
-    @GetMapping
-    public List<User> getAllUsers() {
-        return userService.listUsers();
+    // 用户注册接口
+    @PostMapping("/register")
+    public Result register(@RequestBody User user) {
+        boolean success = userService.register(user);
+        if (success) {
+            return Result.ok().message("注册成功");
+        } else {
+            return Result.error().message("用户名已存在");
+        }
     }
 
-    /**
-     * 添加用户
-     * @param user 用户对象
-     * @return 操作结果
-     */
-    @PostMapping
-    public String addUser(@RequestBody User user) {
-        userService.saveUser(user);
-        return "用户添加成功";
-    }
-
-    /**
-     * 删除用户
-     * @param id 用户ID
-     * @return 操作结果
-     */
-    @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-        return "用户删除成功";
-    }
-
-    /**
-     * 根据用户名获取用户
-     * @param username 用户名
-     * @return 用户信息
-     */
-    @GetMapping("/{username}")
-    public User getUserByUsername(@PathVariable String username) {
-        return userService.getUserByUsername(username);
+    // 用户登录接口
+    @PostMapping("/login")
+    public Result login(@RequestBody User user) {
+        String token = JWTUtil.createToken(user.getUsername());
+        return Result.ok().data("Token", token);
     }
 }

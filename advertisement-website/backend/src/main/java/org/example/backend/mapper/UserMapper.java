@@ -5,9 +5,9 @@ import org.example.backend.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * UserMapper接口，继承MyBatis-Plus的BaseMapper，提供CRUD操作
+ * UserMapper接口，用于操作用户数据表
  */
-@Mapper  // 标注为Mapper接口
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
-    // MyBatis-Plus提供了基本的CRUD方法，无需手动实现
+    User findByUsername(String username);  // 根据用户名查找用户
 }
