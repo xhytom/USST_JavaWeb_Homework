@@ -120,11 +120,25 @@ def add_adv(request):
     else:
         return JsonResponse({'message': 'Only POST method is allowed'}, status=405)
 
+
 # 获取所有广告列表
 def get_all_ads(request):
     if request.method == 'GET':
-        ads = Adv.objects.all().values()
-        ads_list = list(ads)  # 转换为列表格式
+        ads = Adv.objects.all()
+        ads_list = []
+
+        for ad in ads:
+            ads_list.append({
+                'id': ad.id,
+                'adv_master': ad.adv_master,
+                'title': ad.title,
+                'description': ad.description,
+                'url': ad.url,
+                'image_url': ad.image_url,
+                'click_time': ad.click_time,
+                'show_time': ad.show_time,
+            })
+
         return JsonResponse({'ads': ads_list}, safe=False)
 
 
