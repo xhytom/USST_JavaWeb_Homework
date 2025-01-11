@@ -11,17 +11,10 @@ class UserInfo(models.Model):
 
 
 class Adv(models.Model):
-    DoesNotExist = None
-    objects = None
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
-        self.id = None
-
-    adv_master = models.CharField(max_length=50)
+    adv_master = models.CharField(max_length=50)  # 确保是字符串类型
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=500)
-    url = models.CharField(max_length=500)
-    image_url = models.CharField(max_length=500)
+    description = models.TextField()
+    url = models.URLField()
+    image_url = models.URLField()
     click_time = models.IntegerField(default=0)
     show_time = models.IntegerField(default=0)

@@ -71,13 +71,14 @@ def login(request):
 
 
 @csrf_exempt
+@csrf_exempt
 def add_adv(request):
     if request.method == 'POST':
         try:
             # 获取请求体数据
             data = json.loads(request.body)
 
-            # 从请求体中获取单独的字段
+            # 从请求体中获取数据
             adv_master = data.get('adv_master')
             title = data.get('title')
             description = data.get('description')
@@ -99,19 +100,7 @@ def add_adv(request):
             adv.save()
 
             # 返回成功响应
-            return JsonResponse({
-                'message': 'Ad created successfully',
-                'ad': {
-                    'id': adv.id,
-                    'adv_master': adv.adv_master,
-                    'title': adv.title,
-                    'description': adv.description,
-                    'url': adv.url,
-                    'image_url': adv.image_url,
-                    'click_time': adv.click_time,
-                    'show_time': adv.show_time,
-                }
-            }, status=201)
+            return JsonResponse({'message': 'Ad created successfully'}, status=201)
 
         except json.JSONDecodeError:
             return JsonResponse({'message': 'Invalid JSON'}, status=400)
