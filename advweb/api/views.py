@@ -31,7 +31,7 @@ def login(request):
 
         try:
             user = UserInfo.objects.get(username=username)
-            if check_password(password, user.password):
+            if password == user.password:
                 return JsonResponse({'message': 'Login successful', 'username': user.username})
             else:
                 return JsonResponse({'message': 'Invalid credentials'}, status=400)

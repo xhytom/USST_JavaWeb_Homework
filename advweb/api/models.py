@@ -6,13 +6,8 @@ class UserInfo(models.Model):
     objects = None
     DoesNotExist = None
     username = models.CharField(max_length=50)
-    password = models.CharField(max_length=20)
+    password = models.CharField(max_length=300)
     is_operator = models.BooleanField(default=False)
-
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            self.password = make_password(self.password)
-        super().save(*args, **kwargs)
 
 
 class Adv(models.Model):
