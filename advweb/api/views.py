@@ -1,7 +1,8 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from .models import UserInfo, Adv
 from django.contrib.auth.hashers import check_password
+import random
 import json
 
 
@@ -208,3 +209,50 @@ def get_all_users(request):
         return JsonResponse({'users': users_list}, safe=False)
     else:
         return JsonResponse({'message': 'Only GET method is allowed'}, status=405)
+
+
+@csrf_exempt
+def give_random_ad(request):
+    if request.method == 'GET':
+        ad = Adv.objects.order_by('?').first()
+        ad.show_time += 1
+        ad.save()
+        ads_list = [{
+            'id': ad.id,
+            'adv_master': ad.adv_master,
+            'title': ad.title,
+            'description': ad.description,
+            'url': ad.url,
+            'image_url': ad.image_url,
+            'click_time': ad.click_time,
+            'show_time': ad.show_time,
+        }]
+        return JsonResponse({'ads': ads_list}, safe=False)
+    else:
+        return JsonResponse('only allowed get method')
+
+
+@csrf_exempt
+def click_ad(request):
+    if request.method == 'POST':  # 使用大写的 'POST'
+        try:
+            # 获取请求体数据
+            data = json.loads(request.body)
+            click_id = data.get('id')
+
+            # 获取广告对象
+            ad = Adv.objects.get(id=click_id)
+
+            # 增加点击次数
+            ad.click_time += 1
+            ad.save()
+
+            # 重定向到广告的 URL
+            return HttpResponseRedirect(ad.url)  # 或者使用 redirect(ad.url)
+
+        except Adv.DoesNotExist:
+            return JsonResponse({'message': 'Ad not found'}, status=404)
+        except json.JSONDecodeError:
+            return JsonResponse({'message': 'Invalid JSON format'}, status=400)
+    else:
+        return JsonResponse({'message': 'Only POST method is allowed'}, status=405)

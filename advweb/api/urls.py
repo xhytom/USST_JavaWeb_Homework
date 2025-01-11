@@ -11,4 +11,6 @@ urlpatterns = [
     path('delete_ad/<int:ad_id>/', views.delete_ad, name='delete_ad'),
     path('update_ad/<int:ad_id>/', views.update_ad, name='update_ad'),  # 修改广告
     path('get_all_users/', views.get_all_users, name='get_all_users'),
+    path('give_random_ad/', views.give_random_ad, name='give_random_ad'),
+    path('click_ad/', views.click_ad, name='click_ad'),
 ]
