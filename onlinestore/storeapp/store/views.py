@@ -89,4 +89,4 @@ def login(request):
         if pwd != password:
             return redirect("/store/login")
         else:
-            return redirect("/store/goods/list")
+            return redirect("/store/goods/list")                       

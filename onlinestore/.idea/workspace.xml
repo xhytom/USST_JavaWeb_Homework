@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c499920b-8972-420c-83dc-e43a20830669" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/storeapp/store/templates/store/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storeapp/store/templates/store/modify_goods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storeapp/store/templates/store/test_vue.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storeapp/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storeapp/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storeapp/store/templates/store/list_goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/templates/store/list_goods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storeapp/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storeapp/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/storeapp/store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,5 +82,16 @@
       <updated>1734028072844</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
