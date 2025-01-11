@@ -77,7 +77,7 @@ def add_adv(request):
             # 获取请求体数据
             data = json.loads(request.body)
 
-            # 从请求体中获取数据
+            # 从请求体中获取单独的字段
             adv_master = data.get('adv_master')
             title = data.get('title')
             description = data.get('description')
@@ -85,16 +85,16 @@ def add_adv(request):
             image_url = data.get('image_url')
 
             # 校验数据
-            if not adv_master or not title or not description or not url or not image_url:
+            if not all([adv_master, title, description, url, image_url]):
                 return JsonResponse({'message': 'All fields are required'}, status=400)
 
-            # 创建广告对象，click_time 和 show_time 默认值为 0
+            # 创建广告对象
             adv = Adv(
                 adv_master=adv_master,
                 title=title,
                 description=description,
                 url=url,
-                image_url=image_url,
+                image_url=image_url
             )
             adv.save()
 
@@ -111,13 +111,14 @@ def add_adv(request):
                     'click_time': adv.click_time,
                     'show_time': adv.show_time,
                 }
-            })
+            }, status=201)
 
         except json.JSONDecodeError:
             return JsonResponse({'message': 'Invalid JSON'}, status=400)
+        except Exception as e:
+            return JsonResponse({'message': f'An error occurred: {str(e)}'}, status=500)
     else:
         return JsonResponse({'message': 'Only POST method is allowed'}, status=405)
-
 
 # 获取所有广告列表
 def get_all_ads(request):
