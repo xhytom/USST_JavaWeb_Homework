@@ -71,7 +71,6 @@ def login(request):
 
 
 @csrf_exempt
-@csrf_exempt
 def add_adv(request):
     if request.method == 'POST':
         try:
@@ -111,6 +110,7 @@ def add_adv(request):
 
 
 # 获取所有广告列表
+@csrf_exempt
 def get_all_ads(request):
     if request.method == 'GET':
         ads = Adv.objects.all()
