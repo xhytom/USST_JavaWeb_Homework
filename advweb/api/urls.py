@@ -10,4 +10,5 @@ urlpatterns = [
     path('get_ad_by_id/<int:ad_id>/', views.get_ad_by_id, name='get_ad_by_id'),  # 根据 ID 获取广告
     path('delete_ad/<int:ad_id>/', views.delete_ad, name='delete_ad'),
     path('update_ad/<int:ad_id>/', views.update_ad, name='update_ad'),  # 修改广告
+    path('get_all_users/', views.get_all_users, name='get_all_users'),
 ]

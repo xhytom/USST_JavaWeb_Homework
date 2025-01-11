@@ -164,3 +164,12 @@ def update_ad(request, ad_id):
             return JsonResponse({'message': 'Ad not found'}, status=404)
     else:
         return JsonResponse({'message': 'Only PUT method is allowed'}, status=405)
+
+
+def get_all_users(request):
+    if request.method == 'GET':
+        users = UserInfo.objects.all().values('id', 'username', 'is_operator')
+        users_list = list(users)  # 转换为列表格式
+        return JsonResponse({'users': users_list}, safe=False)
+    else:
+        return JsonResponse({'message': 'Only GET method is allowed'}, status=405)
